@@ -8,4 +8,3 @@ module register (
 			q <= d;
 	end
 endmodule
-//Tested waveform 3

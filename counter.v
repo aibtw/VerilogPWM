@@ -13,6 +13,4 @@ module counter(
 		else
 			c <= c - 16'h0001;
 	end
-
 endmodule
-// Tested with waveform 1

@@ -8,7 +8,6 @@ module cu(input clk, reset,
 	
 	initial begin
 		state <= 2'b00;
-		
 	end
 	
 	always @(posedge clk or posedge reset) begin
@@ -63,7 +62,6 @@ module cu(input clk, reset,
 				end
 				else
 					nextState = 2; // stay in active state
-				
 			end
 		endcase 
 	end

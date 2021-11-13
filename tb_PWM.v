@@ -21,7 +21,7 @@ module tb_PWM();
 	
 	// clk
 	always #5 clk = ~clk;
-		initial begin
+	initial begin
 		// Initialize Inputs
 		clk = 0;
 		start = 0;
@@ -33,7 +33,6 @@ module tb_PWM();
 		reset = 0;
 
 
-		// First input: 6. Expected result is 8.
 		#15
 		PERIOD = 16'h000A;
 		ACTIVE = 16'h0004;

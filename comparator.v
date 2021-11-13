@@ -6,4 +6,3 @@ module comparator(
 	assign isEqual = (x==y);
 	
 endmodule
-// Tested with waveform 2

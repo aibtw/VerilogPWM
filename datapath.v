@@ -8,7 +8,6 @@ module datapath(
 	wire [15:0]count;
 	wire [15:0]PERIOD;
 	wire [15:0]ACTIVE;
-	wire isEqual;
 	
 	register COMP0(periodIn, loadReg, clk, PERIOD);
 	register COMP1(activeIn, loadReg, clk, ACTIVE);
