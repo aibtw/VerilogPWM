@@ -20,4 +20,3 @@ module datapath(
 	
 	
 endmodule
-//tested with waveform4

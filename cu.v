@@ -24,7 +24,7 @@ module cu(input clk, reset,
 		nextState = 2'b00;
 		loadReg = 1'b0;
 		loadCNT = 1'b0;
-		pulse = 1'b1;
+		pulse = 1'bz;
 
 		case(state)
 			0:begin
@@ -41,8 +41,10 @@ module cu(input clk, reset,
 				pulse = 0;
 				loadReg = 0;
 				loadCNT = 0;
-				if(stop)
+				if(stop) begin
 					nextState = 0; // go to idle state
+					pulse = 1'bz;
+				end
 				else if(isEq1)
 					nextState = 2;	// go to active state
 				else
@@ -51,8 +53,10 @@ module cu(input clk, reset,
 			
 			2: begin
 				pulse = 1;
-				if(stop)
+				if(stop) begin
 					nextState = 0; // go to idle state
+					pulse = 1'bz;
+				end
 				else if(isEq0) begin
 					nextState = 1; // go to reload state
 					loadCNT = 1;
@@ -61,17 +65,8 @@ module cu(input clk, reset,
 					nextState = 2; // stay in active state
 				
 			end
-			
-//			3:begin
-//				loadCNT = 0;
-//				if(stop)
-//					nextState = 0; // go to idle state
-//				else
-//					nextState = 1; // go to low state
-//			end
 		endcase 
 	end
 	
 	
 endmodule
-//tested in wv6

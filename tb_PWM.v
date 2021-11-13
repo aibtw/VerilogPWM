@@ -40,6 +40,8 @@ module tb_PWM();
 		#15
 		start = 1;
 		#400
+		stop = 1;
+		#400
 		
 		$finish;
 
